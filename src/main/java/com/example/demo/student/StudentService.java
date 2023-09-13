@@ -50,17 +50,15 @@ public class StudentService {
                 .orElseThrow(() -> new IllegalStateException(
                          "student with id " + studentId + " does not exist "));
 
-        if (name != null &&
-                !name.isEmpty() &&
-                   !Objects.equals(student.getName(), name)) {
+        if (!Objects.equals(student.getName(), name)) {
             Optional<Student> studentOptional1 = studentRepository
                     .findStudentByName(name);
-            if (studentOptional1.isPresent()) {
+            /*if (studentOptional1.isPresent()) {
                 throw new IllegalStateException("name already exits");
-            }
+            }*/
             student.setName(name);
         }
-        if (email != null &&
+            if (email != null &&
                 !email.isEmpty() &&
                 !Objects.equals(student.getEmail(),email)) {
             Optional<Student> studentOptional = studentRepository

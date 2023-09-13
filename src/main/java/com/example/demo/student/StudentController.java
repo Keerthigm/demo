@@ -22,6 +22,7 @@ public class StudentController {
     }
     @PostMapping
     public void registerNewStudent(@RequestBody Student student){
+
     studentService.addNewStudent(student);
     }
     @DeleteMapping(path="{studentId}")
