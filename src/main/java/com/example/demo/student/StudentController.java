@@ -14,7 +14,7 @@ public class StudentController {
         this.studentService =  studentService;
     }
 
-
+//getmapping
     @GetMapping
     public List<Student> getStudents(){
 
